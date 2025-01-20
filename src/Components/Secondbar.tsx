@@ -10,7 +10,7 @@ function SecondBar() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Example function to simulate adding an item to the cart
+  // Function to simulate adding an item to the cart
   const addToCart = () => {
     setCartItemCount(cartItemCount + 1); // Increment the cart count
   };
@@ -67,6 +67,16 @@ function SecondBar() {
             <Link href="/cart">My Cart</Link>
           </div>
         </div>
+      </div>
+
+      {/* Simulating Add to Cart functionality */}
+      <div className="flex justify-center mt-4">
+        <button 
+          onClick={addToCart} 
+          className="bg-[#B88E2F] px-6 py-2 rounded-md text-white"
+        >
+          Add to Cart
+        </button>
       </div>
     </section>
   );
