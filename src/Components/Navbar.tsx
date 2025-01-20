@@ -17,7 +17,9 @@ function Navbar() {
           <Image
             src="/logo.jpeg" // Replace with the actual path to your logo image
             alt="Logo"
-            className="h-8 w-50 mr-2"
+            width={50} // Set the width of the logo
+            height={50} // Set the height of the logo
+            className="mr-2"
           />
           <Link href="/" className="hover:text-gray-300">
             Zoshka
