@@ -6,7 +6,6 @@ import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 function SecondBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [cartItemCount, setCartItemCount] = useState(0); // Start with 0 items in the cart
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -54,11 +53,6 @@ function SecondBar() {
           <div className="flex flex-col items-center relative">
             <FaShoppingCart className="w-6 h-6 mb-1" />
             {/* Cart Item Count Badge */}
-            {cartItemCount > 0 && (
-              <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {cartItemCount}
-              </span>
-            )}
             <Link href="/cart">My Cart</Link>
           </div>
         </div>
