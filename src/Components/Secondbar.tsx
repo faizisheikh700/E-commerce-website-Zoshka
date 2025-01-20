@@ -10,6 +10,11 @@ function SecondBar() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Example function to simulate adding an item to the cart
+  const addToCart = () => {
+    setCartItemCount(cartItemCount + 1); // Increment the cart count
+  };
+
   return (
     <section className="bg-black text-white py-4 border-b-2 border-white">
       <div className="container mx-auto flex items-center justify-between px-4">

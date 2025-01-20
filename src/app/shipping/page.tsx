@@ -4,7 +4,6 @@ import Subfooter from "@/Components/Subfooter";
 import Footer from "@/Components/Footer";
 import { Button } from "@/Components/ui/button";
 import { useRouter } from "next/navigation";  // Use useRouter from next/navigation
-import { useState } from "react";
 
 export default function Shipping() {
   const router = useRouter();  // Initialize the router for programmatic navigation
