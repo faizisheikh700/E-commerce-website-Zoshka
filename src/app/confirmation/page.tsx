@@ -17,7 +17,7 @@ const Confirmation = () => {
             Thank you for your order! 🎉
           </p>
           <p className="text-lg text-gray-700 mb-4">
-            We have successfully received your order and are currently processing it. You will be notified once it's ready for shipment.
+            We have successfully received your order and are currently processing it. You will be notified once it is ready for shipment.
           </p>
           <p className="text-lg text-gray-700 mb-4">
             In the meantime, feel free to explore more amazing products on our site!

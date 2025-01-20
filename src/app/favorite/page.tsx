@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Navbar from "@/Components/Navbar";
 import Subfooter from "@/Components/Subfooter";
 import Footer from "@/Components/Footer";
+import Image from 'next/image';
 
 const FavoritePage = () => {
   const [favorites, setFavorites] = useState<string[]>([]); // Example of storing favorite product IDs
@@ -29,7 +30,7 @@ const FavoritePage = () => {
               {favorites.map((productId) => (
                 <div key={productId} className="p-4 border rounded-lg shadow-md">
                   {/* Example of a product card */}
-                  <img src={`/images/products/${productId}.jpg`} alt={`Product ${productId}`} className="w-full h-48 object-cover rounded-lg mb-4" />
+                  <Image src={`/images/products/${productId}.jpg`} alt={`Product ${productId}`} className="w-full h-48 object-cover rounded-lg mb-4" />
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{`Product ${productId}`}</h3>
                   <button
                     className="bg-[#B88E2F] text-white py-2 px-4 rounded-md hover:bg-[#9A7423]"

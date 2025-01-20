@@ -9,7 +9,7 @@ export default function Reviews() {
             {/* Review 1 */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
               <p className="text-lg text-gray-700 mb-4">
-                "Good product with good customer service"
+                Good product with good customer service.
               </p>
               <h4 className="text-xl font-semibold text-[#B88E2F]">Aliya Murtaza</h4>
               <p className="text-sm text-gray-500">Customer</p>
@@ -17,7 +17,7 @@ export default function Reviews() {
             {/* Review 2 */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
               <p className="text-lg text-gray-700 mb-4">
-                "A wonderful experience, fast delivery, and excellent customer service!"
+                A wonderful experience, fast delivery, and excellent customer service!
               </p>
               <h4 className="text-xl font-semibold text-[#B88E2F]">S.Masood Ahmed</h4>
               <p className="text-sm text-gray-500">Customer</p>
@@ -25,7 +25,7 @@ export default function Reviews() {
             {/* Review 3 */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
               <p className="text-lg text-gray-700 mb-4">
-                "The quality of the products is outstanding. Will definitely buy again."
+                The quality of the products is outstanding. Will definitely buy again.
               </p>
               <h4 className="text-xl font-semibold text-[#B88E2F]">Rida Raza</h4>
               <p className="text-sm text-gray-500">Customer</p>

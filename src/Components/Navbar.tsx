@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ function Navbar() {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo with Image */}
         <div className="flex items-center text-2xl font-bold">
-          <img
+          <Image
             src="/logo.jpeg" // Replace with the actual path to your logo image
             alt="Logo"
             className="h-8 w-50 mr-2"
