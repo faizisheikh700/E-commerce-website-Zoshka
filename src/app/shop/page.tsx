@@ -5,6 +5,7 @@ import { FaHeart, FaStar } from "react-icons/fa" // Import the heart icon from r
 import Subfooter from "@/Components/Subfooter"
 import Footer from "@/Components/Footer"
 import Navbar from "@/Components/Navbar"
+import Image from "next/image"
 
 interface Product {
   id: string
@@ -90,7 +91,7 @@ const Home: React.FC = () => {
             className="bg-gray-100 shadow rounded-lg overflow-hidden transition-transform hover:scale-105 duration-300 max-w-xs mx-auto flex flex-col"
           >
             <div className="relative w-full h-72"> {/* Increased the height here */}
-              <img
+              <Image
                 src={item.image || "/placeholder.svg"}
                 alt={item.productname}
                 className="w-full h-full object-contain rounded-t-lg bg-gray-300"

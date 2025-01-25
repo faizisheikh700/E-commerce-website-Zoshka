@@ -7,6 +7,7 @@ import Footer from "@/Components/Footer"
 import Subfooter from "@/Components/Subfooter"
 import { useRouter } from "next/navigation"
 import { Trash2 } from "lucide-react"
+import Image from "next/image"
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([])
@@ -70,7 +71,7 @@ const Cart: React.FC = () => {
               key={item.id}
               className="bg-gray-100 rounded-lg p-4 flex flex-col md:flex-row items-center gap-4 shadow-md"
             >
-              <img
+              <Image
                 src={item.image || "/placeholder.svg"}
                 alt={item.productname}
                 className="w-32 h-32 object-contain bg-white rounded-lg"

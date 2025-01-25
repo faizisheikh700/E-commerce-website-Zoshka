@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 // Import icons from react-icons
-import { FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 
 function SecondBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
