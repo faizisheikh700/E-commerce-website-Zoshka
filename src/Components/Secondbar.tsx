@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 // Import icons from react-icons
-import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
 
 function SecondBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,12 +41,12 @@ function SecondBar() {
           />
         </div>
 
-        {/* Right: Favorite and Cart Sections */}
+        {/* Right: User and Cart Sections */}
         <div className="flex items-center space-x-6">
-          {/* Favorite */}
+          {/* User*/}
           <div className="flex flex-col items-center">
-            <FaHeart className="w-6 h-6 mb-1" />
-            <Link href="/favorite">Favorite</Link>
+            <FaUser className="w-6 h-6 mb-1" />
+            <Link href="/login">User</Link>
           </div>
 
           {/* My Cart */}

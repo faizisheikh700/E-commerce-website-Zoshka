@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div>
       <Navbar />
-      <section className="py-16 bg-gray-100">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-[#B88E2F] mb-16">
             About Us
@@ -27,7 +27,7 @@ export default function About() {
             {/* Image for the "Our Story" section */}
             <div className="flex justify-center items-center">
               <Image
-                src="/about-us.png"
+                src="/about.png"
                 alt="Our Story Image"
                 width={430}
                 height={230}
@@ -43,7 +43,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex justify-center items-center">
               <Image
-                src="/mission.png"
+                src="/mission1.png"
                 alt="Mission Image"
                 width={430}
                 height={230}
@@ -72,7 +72,7 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Team Member 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
               <Image
                 src="/user2.jpg"
                 alt="Team Member 1"
@@ -90,7 +90,7 @@ export default function About() {
             </div>
 
             {/* Team Member 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
               <Image
                 src="/user2.jpg"
                 alt="Team Member 2"

@@ -1,16 +1,44 @@
-"use client"
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/Components/ui/button";
+import emailjs from "emailjs-com";
 import Navbar from "@/Components/Navbar";
 import Subfooter from "@/Components/Subfooter";
 import Footer from "@/Components/Footer";
-import { Button } from "@/Components/ui/button";
-import { useRouter } from "next/navigation";  // Use useRouter from next/navigation
 
 export default function Shipping() {
-  const router = useRouter();  // Initialize the router for programmatic navigation
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    name: "",
+    contact: "",
+    address: "",
+    notes: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();  // Prevent default form submission
-    router.push("/confirmation");  // Navigate to the confirmation page
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Send email using EmailJS
+    try {
+      const result = await emailjs.send(
+        "service_id", // Your EmailJS service ID
+        "template_id", // Your EmailJS template ID
+        formData, // Form data to send
+        "user_id" // Your EmailJS user ID
+      );
+      console.log("Email successfully sent:", result.text);
+
+      // Navigate to confirmation page
+      router.push("/confirmation");
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -34,6 +62,8 @@ export default function Shipping() {
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B88E2F] focus:border-[#B88E2F]"
                 placeholder="Enter your full name"
                 required
@@ -52,6 +82,8 @@ export default function Shipping() {
                 type="tel"
                 id="contact"
                 name="contact"
+                value={formData.contact}
+                onChange={handleChange}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B88E2F] focus:border-[#B88E2F]"
                 placeholder="Enter your contact number"
                 required
@@ -69,6 +101,8 @@ export default function Shipping() {
               <textarea
                 id="address"
                 name="address"
+                value={formData.address}
+                onChange={handleChange}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B88E2F] focus:border-[#B88E2F]"
                 placeholder="Enter your shipping address"
                 rows={4}
@@ -87,6 +121,8 @@ export default function Shipping() {
               <textarea
                 id="notes"
                 name="notes"
+                value={formData.notes}
+                onChange={handleChange}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B88E2F] focus:border-[#B88E2F]"
                 placeholder="Any special instructions or notes"
                 rows={4}
@@ -95,7 +131,7 @@ export default function Shipping() {
 
             {/* Submit Button */}
             <Button
-              type="submit"  // Ensure the button submits the form
+              type="submit"
               className="w-full mt-4 bg-[#B88E2F] text-white hover:bg-[#9A7423]"
               size="lg"
             >
