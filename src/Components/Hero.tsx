@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         
       <Image
-      src="/b2.jpg"
+      src={"/b2.jpg"}
       width={500}
       height={500}
       alt="Picture of the author"
