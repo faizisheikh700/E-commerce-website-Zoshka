@@ -25,9 +25,9 @@ export default function Register() {
       return
     }
     try {
-      await register(name, email, password)
+      await register(name, email,)
       router.push("/profile")
-    } catch (err) {
+    } catch {
       setError("Registration failed")
     }
   }
@@ -116,4 +116,3 @@ export default function Register() {
     </div>
   )
 }
-

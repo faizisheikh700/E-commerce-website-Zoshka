@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { FaHeart, FaStar } from "react-icons/fa" // Import the heart icon from react-icons
+import { FaHeart, FaStar } from "react-icons/fa"
 import Subfooter from "@/Components/Subfooter"
 import Footer from "@/Components/Footer"
 import Navbar from "@/Components/Navbar"
@@ -18,7 +18,7 @@ interface Product {
 }
 
 const Home: React.FC = () => {
-  const [data, setData] = useState<Product[]>([]) 
+  const [data, setData] = useState<Product[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [cartModelVisibility, setCartModelVisibility] = useState<boolean>(false)
   const [favorites, setFavorites] = useState<string[]>([]) // Keep track of favorites
@@ -26,8 +26,7 @@ const Home: React.FC = () => {
   const router = useRouter()
 
   useEffect(() => {
-    // Ensure useRouter is only used on the client side
-    setIsClient(true)
+    setIsClient(true) // Ensure router only works on the client side
   }, [])
 
   useEffect(() => {
@@ -90,17 +89,19 @@ const Home: React.FC = () => {
             key={item.id}
             className="bg-gray-100 shadow rounded-lg overflow-hidden transition-transform hover:scale-105 duration-300 max-w-xs mx-auto flex flex-col"
           >
-            <div className="relative w-full h-72"> {/* Increased the height here */}
+            <div className="relative w-full h-72">
               <Image
                 src={item.image || "/placeholder.svg"}
                 alt={item.productname}
+                width={300} // Set an appropriate width
+                height={300} // Set an appropriate height
                 className="w-full h-full object-contain rounded-t-lg bg-gray-300"
               />
               <div className="absolute top-2 left-2 bg-red-500 text-white py-1 px-3 text-xs font-semibold rounded-full shadow-md">
                 {item.discount} % OFF
               </div>
             </div>
-            <div className="flex-1 p-6"> {/* Increased the padding here for more space */}
+            <div className="flex-1 p-6">
               <h2 className="text-lg font-semibold text-gray-800">{item.productname}</h2>
               <p className="text-sm text-gray-600 mt-1">{item.productdes}</p>
 

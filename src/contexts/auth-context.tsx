@@ -11,8 +11,8 @@ interface User {
 
 interface AuthContextType {
   user: User | null
-  login: (email: string, password: string) => Promise<void>
-  register: (name: string, email: string, password: string) => Promise<void>
+  login: (email: string) => Promise<void>  // Removed password parameter
+  register: (name: string, email: string) => Promise<void>  // Removed password parameter
   logout: () => void
   isLoading: boolean
 }
@@ -38,7 +38,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false)
   }, [])
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string) => {
     try {
       // This is a mock login - replace with your actual API call
       const mockUser = {
@@ -49,12 +49,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       setUser(mockUser)
       localStorage.setItem("user", JSON.stringify(mockUser))
-    } catch (error) {
+    } catch {
       throw new Error("Login failed")
     }
   }
 
-  const register = async (name: string, email: string, password: string) => {
+  const register = async (name: string, email: string) => {
     try {
       // This is a mock registration - replace with your actual API call
       const mockUser = {
@@ -65,7 +65,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       setUser(mockUser)
       localStorage.setItem("user", JSON.stringify(mockUser))
-    } catch (error) {
+    } catch {
       throw new Error("Registration failed")
     }
   }
@@ -81,4 +81,3 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 export function useAuth() {
   return useContext(AuthContext)
 }
-

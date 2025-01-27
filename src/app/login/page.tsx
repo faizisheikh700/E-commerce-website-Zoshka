@@ -19,9 +19,9 @@ export default function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await login(email, password)
+      await login(email)
       router.push("/profile")
-    } catch (err) {
+    } catch {
       setError("Invalid email or password")
     }
   }
@@ -84,4 +84,3 @@ export default function Login() {
     </div>
   )
 }
-
