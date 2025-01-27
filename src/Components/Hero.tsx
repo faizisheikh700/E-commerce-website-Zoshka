@@ -6,13 +6,23 @@ export default function Hero() {
     <div className="relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
+        
+      <Image
+      src="/b2.jpg"
+      width={500}
+      height={500}
+      alt="Picture of the author"
+      className="w-full"
+    />
+        
+        
+        {/* <Image
           src="/b2.jpg" // Corrected: Path should be in quotes
           layout="fill"
           objectFit="cover"
           alt="Hero background"
           priority
-        />
+        /> */}
       </div>
 
       {/* Foreground Content */}
