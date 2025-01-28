@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,23 +7,13 @@ export default function Hero() {
     <div className="relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        
-      <Image
-      src={"/b2.jpg"}
-      width={500}
-      height={500}
-      alt="Picture of the author"
-      className="w-full"
-    />
-        
-        
-        {/* <Image
-          src="/b2.jpg" // Corrected: Path should be in quotes
+        <Image
+          src="/b2.jpg"
+          alt="Hero background"
           layout="fill"
           objectFit="cover"
-          alt="Hero background"
           priority
-        /> */}
+        />
       </div>
 
       {/* Foreground Content */}
@@ -40,7 +30,7 @@ export default function Hero() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolore
           </p>
           <Link href="/shop">
-            <button className="bg-[#B88E2F] text-white px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-semibold rounded-md hover:bg-gray-800 transition duration-300">
+            <button className="inline-block bg-[#B88E2F] text-white px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-semibold rounded-md hover:bg-gray-800 transition duration-300">
               BUY NOW
             </button>
           </Link>
